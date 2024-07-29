@@ -42,7 +42,7 @@ public class KdbTest {
         Path path = Paths.get("src/main/resources/q/query_1.q");
         String query = new String(Files.readAllBytes(path), StandardCharsets.UTF_8);
         RunQ.executeScript(query, con);
-        c.Flip table = (c.Flip) con.k("10#joinTable");
+        c.Flip table = (c.Flip) con.k("10#city_details");
 
         for (int i = 0; i < c.n(table.y[0]); i++) {
             for (int j = 0; j < table.y.length; j++) {
@@ -51,8 +51,8 @@ public class KdbTest {
             System.out.println();
         }
 
-        long count = (long) con.k("count joinTable");
-        System.out.println("Count of joinTable: " + count);
+        long count = (long) con.k("count city_details");
+        System.out.println("Count of city_details: " + count);
 
         Assertions.assertTrue(count == expectedRowCount);
 
@@ -76,7 +76,7 @@ public class KdbTest {
         Path path = Paths.get("src/main/resources/q/query_2.q");
         String query = new String(Files.readAllBytes(path), StandardCharsets.UTF_8);
         RunQ.executeScript(query, con);
-        c.Flip table = (c.Flip) con.k("10#joinTable2");
+        c.Flip table = (c.Flip) con.k("10#sales_per_person");
         for (int i = 0; i < c.n(table.y[0]); i++) {
             for (int j = 0; j < table.y.length; j++) {
                 System.out.print(c.at(table.y[j], i) + " ");
@@ -84,8 +84,8 @@ public class KdbTest {
             System.out.println();
         }
 
-        long count = (long) con.k("count joinTable2");
-        System.out.println("Count of joinTable: " + count);
+        long count = (long) con.k("count sales_per_person");
+        System.out.println("Count of sales_per_person: " + count);
 
         Assertions.assertTrue(count == expectedRowCount);
 

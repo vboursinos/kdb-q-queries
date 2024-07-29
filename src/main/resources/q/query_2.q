@@ -1,4 +1,4 @@
-joinTable2: aj[`id;
+sales_per_person: aj[`id;
     select from
         update id: id, sales: sales + 0, dummy: sales * age from
             (select from

@@ -1,4 +1,4 @@
-show "Hello World";
+show "This is a q script";
 data:1 3 5 7 9;
 show data;
 show til 5;

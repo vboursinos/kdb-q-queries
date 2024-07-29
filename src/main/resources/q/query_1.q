@@ -1,4 +1,4 @@
-joinTable: aj[`id;
+city_details: aj[`id;
     select from
         update popUpdated: pop + 100 from
         update pop: pop + 100 from
