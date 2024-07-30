@@ -185,10 +185,10 @@ public class KdbTest {
 
         c.Flip table;
 
-        table = (c.Flip) con.k("10#joinTable");
+        table = (c.Flip) con.k("10#city_details");
 
-        long count = (long) con.k("count joinTable");
-        System.out.println("Count of joinTable: " + count);
+        long count = (long) con.k("count city_details");
+        System.out.println("Count of city_details: " + count);
 
         Assertions.assertTrue(count == expectedRowCount);
 
@@ -216,10 +216,10 @@ public class KdbTest {
 
         c.Flip table;
 
-        table = (c.Flip) con.k("10#joinTable2");
+        table = (c.Flip) con.k("10#sales_per_person");
 
-        long count = (long) con.k("count joinTable2");
-        System.out.println("Count of joinTable2: " + count);
+        long count = (long) con.k("count sales_per_person");
+        System.out.println("Count of sales_per_person: " + count);
 
         Assertions.assertTrue(count == expectedRowCount);
 
@@ -247,10 +247,10 @@ public class KdbTest {
 
         c.Flip table;
 
-        table = (c.Flip) con.k("10#joinTable3");
+        table = (c.Flip) con.k("10#high_value_large_trades");
 
-        long count = (long) con.k("count joinTable3");
-        System.out.println("Count of joinTable3: " + count);
+        long count = (long) con.k("count high_value_large_trades");
+        System.out.println("Count of high_value_large_trades: " + count);
 
         Assertions.assertTrue(count == expectedRowCount);
 
@@ -278,7 +278,7 @@ public class KdbTest {
 
         c.Flip table;
 
-        table = (c.Flip) con.k("10#joinTable4");
+        table = (c.Flip) con.k("10#high_pop_cities_by_country");
         for (int i = 0; i < c.n(table.y[0]); i++) {
             for (int j = 0; j < table.y.length; j++) {
                 System.out.print(c.at(table.y[j], i) + " ");
@@ -286,8 +286,8 @@ public class KdbTest {
             System.out.println();
         }
 
-        long count = (long) con.k("count joinTable4");
-        System.out.println("Count of joinTable4: " + count);
+        long count = (long) con.k("count high_pop_cities_by_country");
+        System.out.println("Count of high_pop_cities_by_country: " + count);
 
         Assertions.assertTrue(count == expectedRowCount);
 

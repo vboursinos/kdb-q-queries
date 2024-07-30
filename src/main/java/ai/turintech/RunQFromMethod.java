@@ -6,7 +6,7 @@ import java.io.IOException;
 
 public class RunQFromMethod {
     public static void joinCityCountry(c con) throws IOException {
-        String query = "joinTable: aj[`id;\n" +
+        String query = "city_details: aj[`id;\n" +
                        "    select from\n" +
                        "        update popUpdated: pop + 100 from\n" +
                        "        update pop: pop + 100 from\n" +
@@ -19,7 +19,7 @@ public class RunQFromMethod {
     }
 
     public static void joinPersonSale(c con) throws IOException {
-        String query = "joinTable2: aj[`id;\n" +
+        String query = "sales_per_person: aj[`id;\n" +
                        "    select from\n" +
                        "        update id: id, sales: sales + 0, dummy: sales * age from \n" +
                        "            (select from\n" +
@@ -36,7 +36,7 @@ public class RunQFromMethod {
     }
 
     public static void joinTradeStock(c con) throws IOException {
-        String query = "joinTable3: aj[`sym;\n" +
+        String query = "high_value_large_trades: aj[`sym;\n" +
                        "    select from\n" +
                        "        update sym: sym, price: price + 0, dummy: price * size from \n" +
                        "            (select from\n" +
@@ -53,7 +53,7 @@ public class RunQFromMethod {
     }
 
     public static void joinCityCountry2(c con) throws IOException {
-        String query = "joinTable4:aj[`id;select from (city) where pop > 4000000; `id xkey (country)]";
+        String query = "high_pop_cities_by_country:aj[`id;select from (city) where pop > 4000000; `id xkey (country)]";
         con.ks(query);
     }
 }
